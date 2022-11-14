@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seong.mapper.BoardMapper">
+
+
+	<insert id="enroll">
+		insert into seong7032(
+		kname,ename,cname,jumin1,jumin2,
+		bday1,bday2,bday3,bday4,
+		gender,marry,wyear,pay,job,
+		tentry,address1,address2,pnumber1,pnumber2,
+		pnumber3,email,tlevel,damount
+		)values(
+		#{kname},#{ename},#{cname},#{jumin1},#{jumin2},
+		#{bday1},#{bday2},#{bday3},#{bday4},
+		#{gender},#{marry},#{wyear},#{pay},#{job},
+		#{tentry},#{address1},#{address2},#{pnumber1},#{pnumber2},
+		#{pnumber3},#{email},#{tlevel},#{damount}
+		)
+	</insert>
+
+	<select id="getList" resultType="com.seong.model.BoardVO">
+		select
+		bno,kname,jumin1,jumin2,gender,tlevel,job,tentry from seong7032 order
+		by bno DESC
+	</select>
+
+	<delete id="delete">
+	delete from seong7032 where bno = #{bno}
+	</delete>
+
+	<select id="getPage" resultType="com.seong.model.BoardVO">
+		select * from seong7032 where
+		bno = #{bno}
+	</select>
+
+	<update id="modify">
+		update seong7032 set
+		kname = #{kname},
+		ename =
+		#{ename},
+		cname = #{cname},
+		jumin1 = #{jumin1},
+		jumin2 = #{jumin2},
+		bday1
+		= #{bday1},
+		bday2 = #{bday2},
+		bday3 = #{bday3},
+		bday4 = #{bday4},
+		gender =
+		#{gender},
+		marry = #{marry},
+		wyear = #{wyear},
+		pay = #{pay},
+		job = #{job},
+		tentry = #{tentry},
+		address1 = #{address1},
+		address2 = #{address2},
+		pnumber1 = #{pnumber1},
+		pnumber2 = #{pnumber2},
+		pnumber3 = #{pnumber3},
+		email = #{email},
+		tlevel = #{tlevel},
+		damount = #{damount}
+		where bno =
+		#{bno}
+	</update>
+
+	<select id="getListPaging" resultType="com.seong.model.BoardVO">
+		<![CDATA[
+			select bno, kname, jumin1,jumin2, gender, tlevel, job, tentry from(
+				select /*INDEX_DESC(seong7032 pk_board)*/ rownum as rn, bno, kname, jumin1,jumin2, gender, tlevel, job, tentry
+				from seong7032 where rownum <= #{pageNum} * #{amount})
+				
+			where rn > (#{pageNum} -1) * #{amount}
+		]]>
+
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		select count(*) from seong7032
+	</select>
+
+
+</mapper>

@@ -66,23 +66,29 @@ a:hover {
 			<tr>
 				<td><table width="640" border="0" cellspacing="0"
 						cellpadding="0">
-						<div class="search_wrap">
-							<div class="search_area">
-								<tr>
-									<td height="30" align="right"><select name="select"
-										class="INPUT">
-											<option>::::: 전체 :::::</option>
-											<option>이름</option>
-											<option>성별</option>
-											<option>등급</option>
-									</select> <input name="keyword" id="keyword" type="text" class="INPUT">
-										<a href="#"> <img src="/resources/image/search.gif"
-											width="49" height="18" border="0" align="absmiddle">
-										</a>
-									</td>
-								</tr>
-							</div>
-						</div>
+						<tr>
+							<td height="30" align="right">
+								<div class="search_wrap">
+									<div class="search_area">
+										<select name="type" id="type" class="INPUT">
+											<option value=""
+												<c:out value="${pageMaker.cri.type == null?'selected' : ''}"/>>:::::
+												전체 :::::</option>
+											<option value="K"
+												<c:out value="${pageMaker.cri.type eq  'K'? 'selected' : ''}"/>>이름</option>
+											<option value="G"
+												<c:out value="${pageMaker.cri.type eq  'G'? 'selected' : ''}"/>>성별</option>
+											<option value="T"
+												<c:out value="${pageMaker.cri.type eq  'T'? 'selected' : ''}"/>>등급</option>
+										</select> <input name="keyword" id="keyword" type="text" class="INPUT">
+										<button>
+											<img src="/resources/image/search.gif" width="49" height="18"
+												border="0" align="absmiddle">
+										</button>
+									</div>
+								</div>
+							</td>
+						</tr>
 						<tr>
 							<td><table width="640" border="0" cellspacing="0"
 									cellpadding="0">
@@ -293,7 +299,9 @@ a:hover {
 															type="hidden" name="amount"
 															value="${pageMaker.cri.amount}"> <input
 															type="hidden" id="keyword" name="keyword"
-															value="${pageMaker.cri.keyword }">
+															value="${pageMaker.cri.keyword }"> <input
+															type="hidden" id="type" name="type"
+															value="${pageMaker.cri.type }">
 													</form>
 												<tr>
 
@@ -340,6 +348,29 @@ a:hover {
 		moveForm.submit();
 
 	});
+
+	$(".search_area button").on("click", function(e) {
+		e.preventDefault();
+
+		let type = $(".search_area select").val();
+		let keyword = $(".search_area input[name='keyword']").val();
+
+		if (!type) {
+			alert("검색 종류를 선택하세요.");
+			return false;
+		}
+
+		if (!keyword) {
+			alert("키워드를 입력하세요.");
+			return false;
+		}
+
+		moveForm.find("input[name='type']").val(type);
+		moveForm.find("input[name='keyword']").val(keyword);
+		moveForm.find("input[name='pageNum']").val(1);
+		moveForm.submit();
+	});
+
 	function listDel() {
 		var chkBno = [];
 		var chkData;

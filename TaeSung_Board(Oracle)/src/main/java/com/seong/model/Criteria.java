@@ -1,13 +1,17 @@
 package com.seong.model;
 
+import java.util.Arrays;
+
 public class Criteria {
 
 //	현재 페이지
 	private int pageNum;
 //	한 페이지당 보여질 게시물 수
 	private int amount;
-	
+
 	private String keyword;
+	private String type;
+	private String[] typeArr;
 
 //	기본 생성자 
 	public Criteria() {
@@ -36,8 +40,6 @@ public class Criteria {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
-	
 
 	public String getKeyword() {
 		return keyword;
@@ -47,10 +49,27 @@ public class Criteria {
 		this.keyword = keyword;
 	}
 
-	@Override
-	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + "]";
+	public String getType() {
+		return type;
 	}
 
-	
+	public void setType(String type) {
+		this.type = type;
+		this.typeArr = type.split("");
+	}
+
+	public String[] getTypeArr() {
+		return typeArr;
+	}
+
+	public void setTypeArr(String[] typeArr) {
+		this.typeArr = typeArr;
+	}
+
+	@Override
+	public String toString() {
+		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + ", type=" + type
+				+ ", typeArr=" + Arrays.toString(typeArr) + "]";
+	}
+
 }

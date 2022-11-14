@@ -28,7 +28,7 @@
 	</select>
 
 	<delete id="delete">
-	delete from seong7032 where bno = #{bno}
+		delete from seong7032 where bno = #{bno}
 	</delete>
 
 	<select id="getPage" resultType="com.seong.model.BoardVO">
@@ -68,26 +68,53 @@
 		#{bno}
 	</update>
 
+	<sql id="criteria">
+		<trim prefix="AND (" suffix=")" prefixOverrides="OR">
+			<foreach collection="typeArr" item="type">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'K'.toString()">
+							kname like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'G'.toString()">
+							gender like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'T'.toString()">
+							tlevel like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+
+	</sql>
+
 	<select id="getListPaging" resultType="com.seong.model.BoardVO">
 		<![CDATA[
 			select bno, kname, jumin1,jumin2, gender, tlevel, job, tentry from(
 				select /*INDEX_DESC(seong7032 pk_board)*/ rownum as rn, bno, kname, jumin1,jumin2, gender, tlevel, job, tentry
-				from seong7032 where rownum <= #{pageNum} * #{amount})
+				from seong7032 where rownum <= #{pageNum} * #{amount}
 				
+		]]>
+		<if test="keyword != null">
+			<include refid="criteria"></include>
+		</if>
+		
+		<![CDATA[
+			)
+			
 			where rn > (#{pageNum} -1) * #{amount}
 		]]>
-			<if test="keyword != null">
-				and kname like = '%'||#{keyword}||'%'
-			</if>
+
 
 	</select>
-	
+
 	<select id="getTotal" resultType="int">
 		select count(*) from seong7032
-		
-			<if test="keyword != null">
-				where kname like '%'||#{keyword}||'%'
-			</if>		
+
+		<if test="keyword != null">
+			where kname like '%'||#{keyword}||'%'
+		</if>
 	</select>
 
 

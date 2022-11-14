@@ -58,7 +58,7 @@ public class BoardController {
 
 		model.addAttribute("list", bservice.getListPaging(cri));
 		
-		int total = bservice.getTotal();
+		int total = bservice.getTotal(cri);
 		
 		System.out.println("total : "+ total);
 		

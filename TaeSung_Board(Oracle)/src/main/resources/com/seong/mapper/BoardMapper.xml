@@ -76,11 +76,18 @@
 				
 			where rn > (#{pageNum} -1) * #{amount}
 		]]>
+			<if test="keyword != null">
+				and kname like = '%'||#{keyword}||'%'
+			</if>
 
 	</select>
 	
 	<select id="getTotal" resultType="int">
 		select count(*) from seong7032
+		
+			<if test="keyword != null">
+				where kname like '%'||#{keyword}||'%'
+			</if>		
 	</select>
 
 

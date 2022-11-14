@@ -24,7 +24,7 @@
 .pageInfo {
 	list-style: none;
 	display: inline-block;
-	margin: 50px 0 0 100px;
+	margin: 25px 0 0 25px;
 }
 
 .pageInfo li {
@@ -66,17 +66,23 @@ a:hover {
 			<tr>
 				<td><table width="640" border="0" cellspacing="0"
 						cellpadding="0">
-						<tr>
-							<td height="30" align="right"><select name="select"
-								class="INPUT">
-									<option >::::: 전체 :::::</option>
-									<option >이름</option>
-									<option >성별</option>
-									<option >등급</option>
-							</select> <input name="textfield" type="text" class="INPUT"> <a
-								href="#"><img src="/resources/image/search.gif" width="49"
-									height="18" border="0" align="absmiddle"></a></td>
-						</tr>
+						<div class="search_wrap">
+							<div class="search_area">
+								<tr>
+									<td height="30" align="right"><select name="select"
+										class="INPUT">
+											<option>::::: 전체 :::::</option>
+											<option>이름</option>
+											<option>성별</option>
+											<option>등급</option>
+									</select> <input name="keyword" id="keyword" type="text" class="INPUT">
+										<a href="#"> <img src="/resources/image/search.gif"
+											width="49" height="18" border="0" align="absmiddle">
+										</a>
+									</td>
+								</tr>
+							</div>
+						</div>
 						<tr>
 							<td><table width="640" border="0" cellspacing="0"
 									cellpadding="0">
@@ -104,7 +110,8 @@ a:hover {
 											<table width="640" border="0" cellspacing="0" cellpadding="0">
 												<tr>
 													<td width="35" height="20" align="center"><input
-														type="checkbox" name="checkboxAll" id="checkboxAll" value="checkboxAll"></td>
+														type="checkbox" name="checkboxAll" id="checkboxAll"
+														value="checkboxAll"></td>
 													<td width="85" align="center">이름</td>
 													<td width="153" align="center">주민번호</td>
 													<td width="91" align="center">성별</td>
@@ -127,123 +134,123 @@ a:hover {
 													</tr>
 												</c:forEach>
 												<!-- 
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox2" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox3" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox4" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox5" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox6" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox7" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox8" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox9" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr>
-											<tr>
-												<td colspan="7" background="/resources/image/line_bg.gif"></td>
-											</tr>
-											<tr>
-												<td height="20" align="center"><input type="checkbox"
-													name="checkbox10" value="checkbox"></td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-												<td align="center">&nbsp;</td>
-											</tr> -->
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox2" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox3" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox4" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox5" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox6" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox7" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox8" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox9" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="7" background="/resources/image/line_bg.gif"></td>
+						</tr>
+						<tr>
+							<td height="20" align="center"><input type="checkbox"
+								name="checkbox10" value="checkbox"></td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+							<td align="center">&nbsp;</td>
+						</tr> -->
 												<tr>
 													<td colspan="7" background="/resources/image/line_bg.gif"></td>
 												</tr>
@@ -252,25 +259,31 @@ a:hover {
 													style="padding-bottom: 3">
 													<div class="pageInfo_wrap">
 														<div class="pageInfo_area">
-															<a href="#"> <img src="/resources/image/prev.gif"
-																width="22" height="15" border="0" align="absmiddle">
-															</a>&nbsp; <a href="#"> <img
-																src="/resources/image/pre.gif" width="42" height="15"
-																border="0" align="absmiddle">
-															</a>
 															<ul class="pageInfo" id="pageInfo">
+																<li><a href="1"> <img
+																		src="/resources/image/prev.gif" width="22" height="15"
+																		border="0" align="absmiddle">
+																</a>&nbsp; <c:if test="${pageMaker.prev}">
+																		<a href="${pageMaker.startPage-1}"> <img
+																			src="/resources/image/pre.gif" width="42" height="15"
+																			border="0" align="absmiddle">
+																		</a>
+																	</c:if></li>
 																<c:forEach var="num" begin="${pageMaker.startPage}"
 																	end="${pageMaker.endPage}">
 																	<li class="pageInfo_btn"><a href="${num}">${num}</</a></li>
 																</c:forEach>
+																<li><c:if test="${pageMaker.next }">
+																		<a href="${pageMaker.endPage+1 }"> <img
+																			src="/resources/image/next.gif" width="42"
+																			height="15" border="0" align="absmiddle">
+																		</a>&nbsp;
+											</c:if> <a href="${pageMaker.endPage}"> <img
+																		src="/resources/image/next_.gif" width="22"
+																		height="15" border="0" align="absmiddle">
+																</a></li>
 															</ul>
 
-															<a href="#"> <img src="/resources/image/next.gif"
-																width="42" height="15" border="0" align="absmiddle">
-															</a>&nbsp; <a href="#"> <img
-																src="/resources/image/next_.gif" width="22" height="15"
-																border="0" align="absmiddle">
-															</a>
 														</div>
 													</div>
 
@@ -278,7 +291,9 @@ a:hover {
 														<input type="hidden" name="pageNum"
 															value="${pageMaker.cri.pageNum}"> <input
 															type="hidden" name="amount"
-															value="${pageMaker.cri.amount}">
+															value="${pageMaker.cri.amount}"> <input
+															type="hidden" id="keyword" name="keyword"
+															value="${pageMaker.cri.keyword }">
 													</form>
 												<tr>
 
@@ -286,7 +301,7 @@ a:hover {
 												</tr>
 
 												<!-- 
-												 -->
+							 -->
 											</table> <!-------------------------  리스트 ------------------------------>
 										</td>
 									</tr>
@@ -333,23 +348,23 @@ a:hover {
 			chkData = $(this).val();
 			chkBno.push(chkData);
 		});
-		
+
 		var delChk = confirm("정말 삭제하시겠습니까 ?");
-		
-		if(delChk == true){
-		$.ajax({
-			type : "POST",
-			url : "/board/delete",
-			traditional : true,
-			data : {
-				bno : chkBno
-			},
-			success : function(data) {
-				alert("삭제 성공");
-				window.location.reload();
-			}
-		});
-		}else{
+
+		if (delChk == true) {
+			$.ajax({
+				type : "POST",
+				url : "/board/delete",
+				traditional : true,
+				data : {
+					bno : chkBno
+				},
+				success : function(data) {
+					alert("삭제 성공");
+					window.location.reload();
+				}
+			});
+		} else {
 			alert("삭제  취소");
 		}
 
@@ -376,7 +391,7 @@ a:hover {
 		}
 
 	}
-	
+
 	$("#checkboxAll").click(function() {
 		console.log("gdgd");
 		if ($("#checkboxAll").is(":checked")) {

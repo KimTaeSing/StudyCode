@@ -6,6 +6,8 @@ public class Criteria {
 	private int pageNum;
 //	한 페이지당 보여질 게시물 수
 	private int amount;
+	
+	private String keyword;
 
 //	기본 생성자 
 	public Criteria() {
@@ -34,10 +36,21 @@ public class Criteria {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	
+	
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
 
 	@Override
 	public String toString() {
-		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + "]";
+		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + "]";
 	}
 
+	
 }

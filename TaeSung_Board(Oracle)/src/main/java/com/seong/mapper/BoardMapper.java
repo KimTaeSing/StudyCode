@@ -26,6 +26,6 @@ public interface BoardMapper {
 	public List<BoardVO> getListPaging(Criteria cri);
 	
 //	게시물 총 개수
-	public int getTotal();
+	public int getTotal(Criteria cri);
 	
 }
